@@ -78,7 +78,7 @@ void TaskSystemParallelThreadPool::WorkerThread::operator()() {
       }
 
       if (TryStealWork(2) == false){
-        if (m_add_done == false || m_task_finish_cnt == m_tasksys->m_num_total_tasks) {
+        if (m_add_done == false || m_tasksys->m_task_finish_cnt == m_tasksys->m_num_total_tasks) {
           WaitForTask();
         }
       }
