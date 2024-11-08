@@ -30,6 +30,7 @@ private:
   std::mutex m_finish_mtx;
   std::atomic<bool> m_shutdown{false};
   std::atomic<int> m_task_finish_cnt{0};
+  std::atomic<bool> m_add_done {false};
 
   class WorkerThread {
   public:
